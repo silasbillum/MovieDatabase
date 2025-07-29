@@ -30,3 +30,6 @@ secrets.json
 # OS generated
 .DS_Store
 Thumbs.db
+/MovieDatabase/.vs/MovieDatabase/FileContentIndex
+/MovieDatabase/.vs/MovieDatabase/FileContentIndex
+MovieDatabase/.vs/MovieDatabase/FileContentIndex/0bae93e9-8600-46c5-9125-53c7a4faaabd.vsidx
