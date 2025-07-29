@@ -1,0 +1,32 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# VS Code / Rider
+.vscode/
+.idea/
+
+# Build results
+build/
+out/
+
+# App settings
+appsettings.json
+appsettings.*.json
+
+# Sensitive files
+secrets.json
+
+# Logs
+*.log
+
+# Environment files
+.env
+
+# OS generated
+.DS_Store
+Thumbs.db
