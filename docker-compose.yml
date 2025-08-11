@@ -7,10 +7,4 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8510:8510"
-    volumes:
-      - moviedatabase_data:/app/data
     restart: unless-stopped
-    container_name: moviedatabase-app
-
-volumes:
-  moviedatabase_data:
