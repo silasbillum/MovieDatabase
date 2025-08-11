@@ -12,8 +12,7 @@ builder.Services.AddRazorComponents()
 
 var connectionString =
     builder.Configuration.GetConnectionString("DefaultConnection")
-        ?? throw new InvalidOperationException("Connection string"
-        + "'DefaultConnection' not found.");
+        ?? Environment.GetEnvironmentVariable("DefaultConnection");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
