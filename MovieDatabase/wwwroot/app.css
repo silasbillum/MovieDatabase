@@ -49,3 +49,25 @@ h1:focus {
 .darker-border-checkbox.form-check-input {
     border-color: #929292;
 }
+
+.topnav {
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+}
+
+    .topnav a {
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }

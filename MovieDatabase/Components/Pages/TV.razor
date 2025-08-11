@@ -1,0 +1,58 @@
+﻿@page "/Tv"
+@using Models
+@using MovieDatabase.Services
+@inject IMovieService MovieService
+
+<PageTitle>Home</PageTitle>
+
+
+@if (isLoading)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="movie-list">
+        @foreach (var movie in trendingResult)
+        {
+            <div class="movie">
+                <img src="@movie.FullPosterUrl" alt="@movie.MovieTitle" class="movie-cover" />
+                <div class="movie-details">
+                    <p class="text-sm font-semibold">Tv-Show Title: @movie.MovieTitle</p>
+                    <p class="text-sm text-gray-700">Date aired: @movie.ReleaseDate</p>
+                    <p class="text-sm text-gray-700">Language: @movie.Language</p>
+                    <p class="text-sm text-gray-700">Rating: @movie.Rating</p>
+                    @* <p class="text-sm">@movie.Overview</p>
+                    <p>PosterPath: @movie.PosterPath</p>  *@
+                    @* <p>FullPosterUrl: @movie.FullPosterUrl</p> *@
+                </div>
+
+
+            </div>
+        }
+    </div>
+}
+
+
+
+@code {
+    private List<TVShows> trendingResult = new();
+    private bool isLoading = false;
+
+    protected override async Task OnInitializedAsync()
+    {
+        isLoading = true;
+        try
+        {
+            trendingResult = await MovieService.TrendingTVAsync();
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"API Error: {ex.Message}");
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+}
