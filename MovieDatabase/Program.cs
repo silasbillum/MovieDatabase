@@ -13,6 +13,17 @@ builder.WebHost.UseUrls("http://+:8510");
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+// Debug alle miljøvariabler
+Console.WriteLine("=== MILJØVARIABLER DEBUG ===");
+var allEnvVars = Environment.GetEnvironmentVariables();
+foreach (var key in allEnvVars.Keys)
+{
+    if (key.ToString().Contains("DefaultConnection") || key.ToString().Contains("TMDBApiKey") || key.ToString().Contains("TMDB"))
+    {
+        Console.WriteLine($"Miljøvariabel: {key} = {allEnvVars[key]}");
+    }
+}
+
 // Læs miljøvariabler fra Dokploy .env
 var connectionString = Environment.GetEnvironmentVariable("DefaultConnection") 
     ?? builder.Configuration.GetConnectionString("DefaultConnection");
@@ -20,8 +31,11 @@ var connectionString = Environment.GetEnvironmentVariable("DefaultConnection")
 var tmdbApiKey = Environment.GetEnvironmentVariable("TMDBApiKey")
     ?? builder.Configuration["TMDB:ApiKey"];
 
+Console.WriteLine("=== RESULTAT ===");
 Console.WriteLine("connectionString: " + (string.IsNullOrEmpty(connectionString) ? "IKKE FUNDET" : "FUNDET"));
 Console.WriteLine("TMDBApiKey: " + (string.IsNullOrEmpty(tmdbApiKey) ? "IKKE FUNDET" : "FUNDET"));
+Console.WriteLine("connectionString værdi: " + connectionString);
+Console.WriteLine("TMDBApiKey værdi: " + tmdbApiKey);
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString));
