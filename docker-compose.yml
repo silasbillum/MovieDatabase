@@ -8,3 +8,5 @@ services:
     ports:
       - "8510:8510"
     restart: unless-stopped
+    env_file:
+      - .env
