@@ -15,7 +15,7 @@ var connectionString =
         ?? Environment.GetEnvironmentVariable("DefaultConnection");
 
 Console.WriteLine("connectionString: " + connectionString);
-Console.WriteLine("TMDB:ApiKey: " + Environment.GetEnvironmentVariable("TMDB:ApiKey"));
+Console.WriteLine("TMDBApiKey: " + Environment.GetEnvironmentVariable("TMDBApiKey"));
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
