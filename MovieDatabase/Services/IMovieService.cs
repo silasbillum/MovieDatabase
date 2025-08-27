@@ -5,8 +5,9 @@ namespace MovieDatabase.Services
     {
         Task<List<Movie>> SearchMoviesAsync(string movieId);
         Task<List<Movie>> TrendingMoviesAsync(int page);
-        Task<List<Movie>> TopRatedMoviesAsync();
+        Task<MovieSearchResult> TopRatedMoviesAsync(int page);
         Task<Movie> MoviesDetailsAsync(int movieId);
-        Task<List<TVShows>> TrendingTVAsync();
+        Task<TVShows> TVDetailsAsync(int movieId);
+        Task<List<TVShows>> TrendingTVAsync(int page);
     }
 }

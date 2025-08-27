@@ -1,6 +1,7 @@
 ﻿// Services/MovieService.cs
 using Microsoft.AspNetCore.Http.HttpResults;
 using Models;
+using MovieDatabase.Components.Pages;
 using MovieDatabase.Services;
 using RestSharp;
 using System.Text.Json;
@@ -57,7 +58,7 @@ public class MovieService : IMovieService
 
         var request = new RestRequest();
         request.AddParameter("api_key", apiKey);
-        request.AddParameter("include_adult", "true");
+        request.AddParameter("include_adult", "false");
         request.AddParameter("include_video", "true");
         request.AddParameter("language", "en-US");
         request.AddParameter("page", page.ToString());
@@ -98,7 +99,31 @@ public class MovieService : IMovieService
         return movie;
     }
 
-    public async Task<List<TVShows>> TrendingTVAsync()
+    public async Task<TVShows> TVDetailsAsync(int tvId)
+    {
+        var apiKey = _config["TMDB:ApiKey"];
+        var options = new RestClientOptions("https://api.themoviedb.org/3")
+        {
+            ThrowOnAnyError = true
+        };
+        var client = new RestClient(options);
+
+        var request = new RestRequest($"/tv/{tvId}");
+        request.AddParameter("api_key", apiKey);
+        request.AddParameter("language", "en-US");
+
+        var response = await client.ExecuteAsync(request);
+
+        if (!response.IsSuccessful)
+            throw new Exception("TMDB API request failed: " + response.ErrorMessage);
+
+        var tv = JsonSerializer.Deserialize<TVShows>(response.Content!,
+            new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+        return tv;
+    }
+
+    public async Task<List<TVShows>> TrendingTVAsync(int page)
     {
         var apiKey = _config["TMDB:ApiKey"];
         var options = new RestClientOptions("https://api.themoviedb.org/3/discover/tv")
@@ -112,7 +137,7 @@ public class MovieService : IMovieService
         request.AddParameter("include_adult", "true");
         request.AddParameter("include_null_first_air_dates", "false");
         request.AddParameter("language", "en-US");
-        request.AddParameter("page", "10");
+        request.AddParameter("page", page.ToString());
         request.AddParameter("screened_theatrically", "true");
         request.AddParameter("sort_by", "popularity.desc");
 
@@ -127,7 +152,8 @@ public class MovieService : IMovieService
         return result?.Results ?? new List<TVShows>();
     }
 
-    public async Task<List<Movie>> TopRatedMoviesAsync()
+    public async Task<MovieSearchResult> TopRatedMoviesAsync(int page)
+
     {
         var apiKey = _config["TMDB:ApiKey"];
         var options = new RestClientOptions("https://api.themoviedb.org/3/movie/top_rated")
@@ -139,7 +165,7 @@ public class MovieService : IMovieService
         var request = new RestRequest();
         request.AddParameter("api_key", apiKey);
         request.AddParameter("language", "en-US");
-        request.AddParameter("page", "1");
+        request.AddParameter("page", page.ToString());
 
         var response = await client.ExecuteAsync(request);
 
@@ -149,8 +175,20 @@ public class MovieService : IMovieService
         var result = JsonSerializer.Deserialize<MovieSearchResult>(response.Content,
             new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-        return result?.Results ?? new List<Movie>();
+        if(result == null)
+        {
+
+        return result ?? new MovieSearchResult { Results = new List<Movie>(), Page = page, TotalPages = 1 };
+        }
+
+        if(result.TotalPages > 500)
+        {
+            result.TotalPages = 500;
+        }
+
+        return result;
     }
+
 
 
 

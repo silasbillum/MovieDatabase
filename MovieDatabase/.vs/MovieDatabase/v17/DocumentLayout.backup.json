@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\moviedatabase\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|solutionrelative:components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\moviedatabase\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|solutionrelative:components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\moviedatabase\\components\\pages\\toprated.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|solutionrelative:components\\pages\\toprated.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\moviedatabase\\services\\movieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,35 +15,25 @@
       "RelativeMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|solutionrelative:services\\imovieservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\moviedatabase\\components\\pages\\moviedetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|solutionrelative:components\\pages\\moviedetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\moviedatabase\\components\\pages\\search.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|solutionrelative:components\\pages\\search.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\moviedatabase\\components\\pages\\toprated.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|solutionrelative:components\\pages\\toprated.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{F269B82C-6428-4C64-BF14-0BB9E6D1E342}|..\\Models\\Models.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\models\\moviesearchresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\moviedatabase\\components\\pages\\tv.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|solutionrelative:components\\pages\\tv.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{F269B82C-6428-4C64-BF14-0BB9E6D1E342}|..\\Models\\Models.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\moviedatabase\\components\\pages\\moviedetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|solutionrelative:components\\pages\\moviedetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F269B82C-6428-4C64-BF14-0BB9E6D1E342}|..\\Models\\Models.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\models\\tvshows.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F269B82C-6428-4C64-BF14-0BB9E6D1E342}|..\\Models\\Models.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\models\\tvresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F269B82C-6428-4C64-BF14-0BB9E6D1E342}|..\\Models\\Models.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\models\\moviesearchresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F269B82C-6428-4C64-BF14-0BB9E6D1E342}|..\\Models\\Models.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\models\\watchlistentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F269B82C-6428-4C64-BF14-0BB9E6D1E342}|..\\Models\\Models.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\models\\models.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|c:\\users\\sila1400\\documents\\github\\moviedatabase\\moviedatabase\\components\\pages\\tvdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FDA3F284-2F4F-49D4-B4D2-034BAA2ADC76}|MovieDatabase.csproj|solutionrelative:components\\pages\\tvdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\sila1400\\source\\repos\\Models\\Class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
@@ -63,169 +49,125 @@
           "SelectedChildIndex": 8,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Layout\\MainLayout.razor",
-              "RelativeDocumentMoniker": "Components\\Layout\\MainLayout.razor",
-              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Layout\\MainLayout.razor",
-              "RelativeToolTip": "Components\\Layout\\MainLayout.razor",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-06T12:11:14.346Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MovieDetails.razor",
-              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\MovieDetails.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\MovieDetails.razor",
-              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\MovieDetails.razor",
-              "RelativeToolTip": "Components\\Pages\\MovieDetails.razor",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-06T07:43:11.842Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MovieService.cs",
-              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Services\\MovieService.cs",
-              "RelativeDocumentMoniker": "Services\\MovieService.cs",
-              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Services\\MovieService.cs",
-              "RelativeToolTip": "Services\\MovieService.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAYwD4AAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T11:42:53.131Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "TV.razor",
-              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\TV.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\TV.razor",
-              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\TV.razor",
-              "RelativeToolTip": "Components\\Pages\\TV.razor",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAA9AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-04T12:10:42.213Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Search.razor",
-              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\Search.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\Search.razor",
-              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\Search.razor",
-              "RelativeToolTip": "Components\\Pages\\Search.razor",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAAAFQAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-04T11:36:13.704Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TVShows.cs",
-              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\Models\\TVShows.cs",
-              "RelativeDocumentMoniker": "..\\Models\\TVShows.cs",
-              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\Models\\TVShows.cs",
-              "RelativeToolTip": "..\\Models\\TVShows.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBoAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T12:18:26.469Z"
-            },
-            {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "IMovieService.cs",
-              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Services\\IMovieService.cs",
-              "RelativeDocumentMoniker": "Services\\IMovieService.cs",
-              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Services\\IMovieService.cs",
-              "RelativeToolTip": "Services\\IMovieService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA2AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T11:57:58.836Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Home.razor",
-              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\Home.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
-              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\Home.razor",
-              "RelativeToolTip": "Components\\Pages\\Home.razor",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACUAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-29T12:12:34.648Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "TopRated.razor",
-              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\TopRated.razor",
-              "RelativeDocumentMoniker": "Components\\Pages\\TopRated.razor",
-              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\TopRated.razor",
-              "RelativeToolTip": "Components\\Pages\\TopRated.razor",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-05T06:24:19.827Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TVResult.cs",
-              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\Models\\TVResult.cs",
-              "RelativeDocumentMoniker": "..\\Models\\TVResult.cs",
-              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\Models\\TVResult.cs",
-              "RelativeToolTip": "..\\Models\\TVResult.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T12:27:19.802Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
               "Title": "MovieSearchResult.cs",
               "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\Models\\MovieSearchResult.cs",
               "RelativeDocumentMoniker": "..\\Models\\MovieSearchResult.cs",
               "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\Models\\MovieSearchResult.cs",
               "RelativeToolTip": "..\\Models\\MovieSearchResult.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-04T12:27:30.967Z"
+              "WhenOpened": "2025-08-26T12:01:26.607Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "WatchlistEntry.cs",
-              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\Models\\WatchlistEntry.cs",
-              "RelativeDocumentMoniker": "..\\Models\\WatchlistEntry.cs",
-              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\Models\\WatchlistEntry.cs",
-              "RelativeToolTip": "..\\Models\\WatchlistEntry.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 5,
+              "Title": "Movie.cs",
+              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\Models\\Movie.cs",
+              "RelativeDocumentMoniker": "..\\Models\\Movie.cs",
+              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\Models\\Movie.cs",
+              "RelativeToolTip": "..\\Models\\Movie.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABsAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-29T08:54:49.141Z"
+              "WhenOpened": "2025-08-25T12:16:26.992Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Models",
-              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\Models\\Models.csproj",
-              "RelativeDocumentMoniker": "..\\Models\\Models.csproj",
-              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\Models\\Models.csproj",
-              "RelativeToolTip": "..\\Models\\Models.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-07-29T10:20:24.377Z"
+              "DocumentIndex": 4,
+              "Title": "TV.razor",
+              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\TV.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\TV.razor",
+              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\TV.razor",
+              "RelativeToolTip": "Components\\Pages\\TV.razor",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAAAGUAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-04T12:10:42.213Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 1,
+              "Title": "MovieService.cs",
+              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Services\\MovieService.cs",
+              "RelativeDocumentMoniker": "Services\\MovieService.cs",
+              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Services\\MovieService.cs",
+              "RelativeToolTip": "Services\\MovieService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T12:15:08.873Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TVDetails.razor",
+              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\TVDetails.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\TVDetails.razor",
+              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\TVDetails.razor",
+              "RelativeToolTip": "Components\\Pages\\TVDetails.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-25T08:09:17.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "MovieDetails.razor",
+              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\MovieDetails.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\MovieDetails.razor",
+              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\MovieDetails.razor",
+              "RelativeToolTip": "Components\\Pages\\MovieDetails.razor",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAQwBMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-06T07:43:11.842Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TVShows.cs",
+              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\Models\\TVShows.cs",
+              "RelativeDocumentMoniker": "..\\Models\\TVShows.cs",
+              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\Models\\TVShows.cs",
+              "RelativeToolTip": "..\\Models\\TVShows.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T12:16:35.017Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IMovieService.cs",
+              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Services\\IMovieService.cs",
+              "RelativeDocumentMoniker": "Services\\IMovieService.cs",
+              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Services\\IMovieService.cs",
+              "RelativeToolTip": "Services\\IMovieService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAcAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-25T07:19:58.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TopRated.razor",
+              "DocumentMoniker": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\TopRated.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\TopRated.razor",
+              "ToolTip": "C:\\Users\\sila1400\\Documents\\GitHub\\MovieDatabase\\MovieDatabase\\Components\\Pages\\TopRated.razor",
+              "RelativeToolTip": "Components\\Pages\\TopRated.razor",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAqwC8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-05T06:24:19.827Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Class1.cs",
               "DocumentMoniker": "C:\\Users\\sila1400\\source\\repos\\Models\\Class1.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\source\\repos\\Models\\Class1.cs",

@@ -4,7 +4,7 @@ namespace Models
 {
     using System.Text.Json.Serialization;
 
-    public class Movie
+    public class    Movie
     {
         [JsonPropertyName("id")]
         public int Id { get; set; }
@@ -15,6 +15,9 @@ namespace Models
         [JsonPropertyName("overview")]
         public string Overview { get; set; }
 
+        [JsonPropertyName("original_language")]
+        public string Language { get; set; }
+
         [JsonPropertyName("poster_path")]
         public string PosterPath { get; set; }
 
@@ -22,7 +25,10 @@ namespace Models
         public string ReleaseDate { get; set; }
 
         [JsonPropertyName("vote_average")]
-        public double? Rating { get; set; }
+        public double Rating { get; set; }
+
+        [JsonPropertyName("Genres")]
+        public List<Genre> Genres { get; set; } = new List<Genre>();
 
         public string FullPosterUrl =>
             !string.IsNullOrWhiteSpace(PosterPath)
