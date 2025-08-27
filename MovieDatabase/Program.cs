@@ -6,17 +6,25 @@ using MovieDatabase.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Konfigurer port 8510
+builder.WebHost.UseUrls("http://+:8510");
+
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-var connectionString =
-    builder.Configuration.GetConnectionString("DefaultConnection")
-        ?? throw new InvalidOperationException("Connection string"
-        + "'DefaultConnection' not found.");
+// Læs miljøvariabler fra Dokploy .env
+var connectionString = Environment.GetEnvironmentVariable("DefaultConnection") 
+    ?? builder.Configuration.GetConnectionString("DefaultConnection");
+
+var tmdbApiKey = Environment.GetEnvironmentVariable("TMDBApiKey")
+    ?? builder.Configuration["TMDB:ApiKey"];
+
+Console.WriteLine("connectionString: " + (string.IsNullOrEmpty(connectionString) ? "IKKE FUNDET" : "FUNDET"));
+Console.WriteLine("TMDBApiKey: " + (string.IsNullOrEmpty(tmdbApiKey) ? "IKKE FUNDET" : "FUNDET"));
 
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(connectionString));
 
 
 builder.Services.AddScoped<IMovieService, MovieService>();

@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  moviedatabase:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8510:8510"
+    restart: unless-stopped
+    env_file:
+      - .env

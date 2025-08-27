@@ -22,7 +22,7 @@ public class MovieService : IMovieService
 
     public async Task<List<Movie>> SearchMoviesAsync(string query)
     {
-        var apiKey = _config["TMDB:ApiKey"];
+        var apiKey = _config["TMDB:ApiKey"] ?? Environment.GetEnvironmentVariable("TMDBApiKey");
         var request = new RestRequest("search/movie", Method.Get);
         request.AddParameter("api_key", apiKey);
         request.AddParameter("query", query);
@@ -49,7 +49,7 @@ public class MovieService : IMovieService
 
     public async Task<List<Movie>> TrendingMoviesAsync(int page)
     {
-        var apiKey = _config["TMDB:ApiKey"];
+        var apiKey = _config["TMDB:ApiKey"] ?? Environment.GetEnvironmentVariable("TMDBApiKey");
         var options = new RestClientOptions("https://api.themoviedb.org/3/discover/movie")
         {
             ThrowOnAnyError = true
@@ -77,7 +77,7 @@ public class MovieService : IMovieService
 
     public async Task<Movie> MoviesDetailsAsync(int movieId)
     {
-        var apiKey = _config["TMDB:ApiKey"];
+        var apiKey = _config["TMDB:ApiKey"] ?? Environment.GetEnvironmentVariable("TMDBApiKey");
         var options = new RestClientOptions("https://api.themoviedb.org/3")
         {
             ThrowOnAnyError = true
@@ -125,7 +125,7 @@ public class MovieService : IMovieService
 
     public async Task<List<TVShows>> TrendingTVAsync(int page)
     {
-        var apiKey = _config["TMDB:ApiKey"];
+        var apiKey = _config["TMDB:ApiKey"] ?? Environment.GetEnvironmentVariable("TMDBApiKey");
         var options = new RestClientOptions("https://api.themoviedb.org/3/discover/tv")
         {
             ThrowOnAnyError = true
@@ -155,7 +155,7 @@ public class MovieService : IMovieService
     public async Task<MovieSearchResult> TopRatedMoviesAsync(int page)
 
     {
-        var apiKey = _config["TMDB:ApiKey"];
+        var apiKey = _config["TMDB:ApiKey"] ?? Environment.GetEnvironmentVariable("TMDBApiKey");
         var options = new RestClientOptions("https://api.themoviedb.org/3/movie/top_rated")
         {
             ThrowOnAnyError = true
