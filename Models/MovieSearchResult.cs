@@ -15,5 +15,7 @@ namespace Models
         public int Page { get; set; }
         [JsonPropertyName("total_pages")]
         public int TotalPages { get; set; }
+
+        public List<Videos> ResultsVideos { get; set; }
     }
 }

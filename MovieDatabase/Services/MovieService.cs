@@ -18,7 +18,7 @@ public class MovieService : IMovieService
         _client = new RestClient("https://api.themoviedb.org/3"); // manually created
     }
 
-   
+
 
     public async Task<List<Movie>> SearchMoviesAsync(string query)
     {
@@ -86,6 +86,7 @@ public class MovieService : IMovieService
 
         var request = new RestRequest($"/movie/{movieId}");
         request.AddParameter("api_key", apiKey);
+        request.AddParameter("images", "true");
         request.AddParameter("language", "en-US");
 
         var response = await client.ExecuteAsync(request);
@@ -175,13 +176,13 @@ public class MovieService : IMovieService
         var result = JsonSerializer.Deserialize<MovieSearchResult>(response.Content,
             new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
 
-        if(result == null)
+        if (result == null)
         {
 
-        return result ?? new MovieSearchResult { Results = new List<Movie>(), Page = page, TotalPages = 1 };
+            return result ?? new MovieSearchResult { Results = new List<Movie>(), Page = page, TotalPages = 1 };
         }
 
-        if(result.TotalPages > 500)
+        if (result.TotalPages > 500)
         {
             result.TotalPages = 500;
         }
@@ -189,6 +190,53 @@ public class MovieService : IMovieService
         return result;
     }
 
+
+    public async Task<List<Images>> GetMovieBackdropsAsync(int movieId)
+    {
+        var apiKey = _config["TMDB:ApiKey"] ?? Environment.GetEnvironmentVariable("TMDBApiKey");
+        var client = new RestClient("https://api.themoviedb.org/3");
+        var request = new RestRequest($"/movie/{movieId}/images");
+        request.AddParameter("api_key", apiKey);
+
+        var response = await client.ExecuteAsync(request);
+
+        if (!response.IsSuccessful)
+            throw new Exception("TMDB API request failed: " + response.ErrorMessage);
+
+        var result = JsonSerializer.Deserialize<ImagesResult>(response.Content!,
+            new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+        return result?.Backdrops ?? new List<Images>();
+    }
+
+    // Model for deserialization
+    public class ImagesResult
+    {
+        public List<Images> Backdrops { get; set; }
+    }
+
+    public async Task<List<Videos>> GetMovieVideosAsync(int movieId)
+    {
+        var apiKey = _config["TMDB:ApiKey"] ?? Environment.GetEnvironmentVariable("TMDBApiKey");
+        var client = new RestClient("https://api.themoviedb.org/3");
+        var request = new RestRequest($"/movie/{movieId}/videos");
+        request.AddParameter("api_key", apiKey);
+
+        var response = await client.ExecuteAsync(request);
+
+        if (!response.IsSuccessful)
+            throw new Exception("TMDB API request failed: " + response.ErrorMessage);
+
+        var result = JsonSerializer.Deserialize<VideosResult>(response.Content!,
+            new JsonSerializerOptions { PropertyNameCaseInsensitive = true });
+
+        return result?.Results ?? new List<Videos>();
+    }
+    // Model for deserialization
+    public class VideosResult
+    {
+        public List<Videos> Results { get; set; }
+    }
 
 
 

@@ -15,10 +15,58 @@ else
         <p>@movie.Overview</p>
         <p><strong>Release Date:</strong> @movie.ReleaseDate</p>
         <p><strong>Rating:</strong> @movie.Rating</p>
+        <p><strong>Budget:</strong> @movie.Budget.ToString("N0")</p>
+        <p><strong>Revenue:</strong> @movie.Revenue.ToString("N0")</p>
+        <p><strong>Runtime:</strong> @movie.RunTime</p>
 
-        <p class="movieInfo-date text-gray-700">@movie.Genres</p>
+        @foreach (var video in movie.Videos.Where(v => v.Type != null && v.Type.ToLower() == "trailer"))
+{
+    <div class="video">
+        <h4>@video.Name</h4>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/@video.Key" frameborder="0"
+            allowfullscreen></iframe>
+    </div>
+}
+        @foreach (var video in movie.Videos.Where(v => v.Name != null && v.Name.ToLower().Contains("song clip")))
+        {
+            <div class="video">
+                <h4>@video.Name</h4>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/@video.Key" frameborder="0"
+                    allowfullscreen></iframe>
+            </div>
+        }
+        @foreach (var video in movie.Videos.Where(v => v.Name != null && v.Name.ToLower().Contains("clip")))
+        {
+            <div class="video">
+                <h4>@video.Name</h4>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/@video.Key" frameborder="0"
+                    allowfullscreen></iframe>
+            </div>
+        }
 
-        <p class="movieInfo-date text-gray-700">@movie.Genres</p>
+
+        @if (movie.Genres != null && movie.Genres.Any())
+        {
+            <p><strong>Genres:</strong> @string.Join(", ", movie.Genres.Select(g => g.Name))</p>
+        }
+        @if (movie.ProductionCompanies != null && movie.ProductionCompanies.Any())
+        {
+            foreach (var company in movie.ProductionCompanies)
+            {
+                <img src="@company.FullLogoUrl" alt="@company.Name" />
+            }
+            <p><strong>Production Companies:</strong> @string.Join(", ", movie.ProductionCompanies.Select(p => p.Name))</p>
+        }
+        @if (movie.Backdrops != null && movie.Backdrops.Any())
+        {
+
+            <div class="backdrops">
+                @foreach (var backdrop in movie.Backdrops)
+                {
+                    <img src="@backdrop.FullPosterUrl" alt="Backdrop" class="backdrop-image" />
+                }
+            </div>
+        }
 
     </div>
 }
@@ -33,5 +81,14 @@ else
     protected override async Task OnInitializedAsync()
     {
         movie = await MovieService.MoviesDetailsAsync(MovieId);
+        if (movie != null)
+        {
+            movie.Backdrops = await MovieService.GetMovieBackdropsAsync(MovieId);
+        }
+        if (movie != null)
+        {
+            movie.Videos = await MovieService.GetMovieVideosAsync(MovieId);
+        }
+
     }
 }

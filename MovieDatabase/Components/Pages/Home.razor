@@ -10,43 +10,44 @@
 {
     <p>Loading...</p>
 }
-else 
+else
 {
     <div class="movie-list">
         @foreach (var movie in trendingResult)
         {
-          <div class="MovieList" @onclick="()=> OpenDetails(movie.Id)">
+            <div class="MovieList" @onclick="() => OpenDetails(movie.Id)">
 
-           
-            <div >
-                <img  src="@movie.FullPosterUrl" alt="@movie.MovieTitle" class="movie" />
-            </div>
+
+                <div>
+                    <img src="@movie.FullPosterUrl" alt="@movie.MovieTitle" class="movie" />
+                </div>
                 <div class="movie-details">
-                    <p class="movieInfo">@movie.MovieTitle <span style="visibility: hidden;">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span></p>
+                    <p class="movieInfo">@movie.MovieTitle <span
+                            style="visibility: hidden;">------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------</span>
+                    </p>
                     <p class="movieInfo-date text-gray-700">@movie.ReleaseDate</p>
-                    <p class="movieInfo-date text-gray-700">@movie.Genres</p>
                     @* <p class="text-sm">@movie.Overview</p>
                     <p>PosterPath: @movie.PosterPath</p>  *@
                     @* <p>FullPosterUrl: @movie.FullPosterUrl</p> *@
                 </div>
 
-          </div>
-            
+            </div>
+
         }
     </div>
 }
 
-            <div class="pagination-controls">
-                <button class="btn btn-primary me-2" @onclick="PrevPage" disabled="@(!CanGoPrev)">Previous</button>
-                <span>Page @currentPage</span>
-                <button class="btn btn-primary ms-2" @onclick="NextPage">Next</button>
-            </div>
+<div class="pagination-controls">
+    <button class="btn btn-primary me-2" @onclick="PrevPage" disabled="@(!CanGoPrev)">Previous</button>
+    <span>Page @currentPage</span>
+    <button class="btn btn-primary ms-2" @onclick="NextPage">Next</button>
+</div>
 
 
 
 
 
-@code{
+@code {
     [SupplyParameterFromQuery(Name = "page")]
     public int PageFromQuery { get; set; } = 1;
     private List<Movie> trendingResult = new();
@@ -56,8 +57,8 @@ else
 
 
     protected override async Task OnInitializedAsync()
-    {        
-        await LoadMoviesAsync(currentPage);     
+    {
+        await LoadMoviesAsync(currentPage);
     }
 
     protected override async Task OnParametersSetAsync()
@@ -83,7 +84,7 @@ else
     }
     public void OpenDetails(int movieId)
     {
-        navigationManager.NavigateTo($"/movie/{movieId}");  
+        navigationManager.NavigateTo($"/movie/{movieId}");
     }
     private void GoToPage(int page)
     {
@@ -97,30 +98,32 @@ else
             GoToPage(currentPage - 1);
     }
 
-   
+
 }
 
 <style>
-    .MovieList{
+    .MovieList {
         width: 220px;
         min-height: 250px;
         border-radius: 20px;
         border-width: 1px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
     }
-    .movie{
+
+    .movie {
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
         width: 220px;
         height: 300px;
-        
+
 
     }
-    .movieInfo{
+
+    .movieInfo {
         padding-left: 20px;
         min-height: 30px;
         margin: 0;
-        font-weight:bold;
+        font-weight: bold;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
@@ -132,20 +135,20 @@ else
         min-height: 50px;
         max-height: 50px;
         margin: 0;
-        color:dimgray;
+        color: dimgray;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         overflow: hidden;
     }
 
-    .movie-details{
-        border:hidden;
+    .movie-details {
+        border: hidden;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
         max-height: 80px;
         border-width: 1px;
-        
+
     }
 
     .movie-list {
