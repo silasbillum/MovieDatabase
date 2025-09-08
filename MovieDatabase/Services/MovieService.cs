@@ -197,6 +197,7 @@ public class MovieService : IMovieService
         var client = new RestClient("https://api.themoviedb.org/3");
         var request = new RestRequest($"/movie/{movieId}/images");
         request.AddParameter("api_key", apiKey);
+        request.AddParameter("include_image_language", "en");
 
         var response = await client.ExecuteAsync(request);
 

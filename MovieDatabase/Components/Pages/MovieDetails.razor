@@ -10,63 +10,100 @@
 else
 {
     <div>
-        <h2>@movie.MovieTitle</h2>
-        <img src="@movie.FullPosterUrl" alt="@movie.MovieTitle" />
-        <p>@movie.Overview</p>
-        <p><strong>Release Date:</strong> @movie.ReleaseDate</p>
-        <p><strong>Rating:</strong> @movie.Rating</p>
-        <p><strong>Budget:</strong> @movie.Budget.ToString("N0")</p>
-        <p><strong>Revenue:</strong> @movie.Revenue.ToString("N0")</p>
-        <p><strong>Runtime:</strong> @movie.RunTime</p>
+        <h2 class="movie-title">@movie.MovieTitle</h2>
+        <div class="movie-poster-container">
 
-        @foreach (var video in movie.Videos.Where(v => v.Type != null && v.Type.ToLower() == "trailer"))
+            <img class="movie-poster" src="@movie.FullPosterUrl" alt="@movie.MovieTitle" />
+
+            @{
+                var firstTrailer = movie.Videos.FirstOrDefault(v => v.Name != null && v.Name.ToLower().Contains("official trailer"));
+            }
+            @if (firstTrailer != null)
+            {
+                <div class="video">
+                    <iframe height="455" width="700" src="https://www.youtube.com/embed/@firstTrailer.Key" frameborder="0"
+                        allowfullscreen></iframe>
+                </div>
+            }
+
+            <div class="movie-details">
+
+
+                <p><strong>Release Date:</strong> @movie.ReleaseDate</p>
+                <p><strong>Rating:</strong> @movie.Rating</p>
+                <p><strong>Budget:</strong> @movie.Budget.ToString("N0")</p>
+                <p><strong>Revenue:</strong> @movie.Revenue.ToString("N0")</p>
+                <p><strong>Runtime:</strong> @movie.RunTime</p>
+
+                @if (movie.Genres != null && movie.Genres.Any())
+                {
+                    <p><strong>Genres:</strong> @string.Join(", ", movie.Genres.Select(g => g.Name))</p>
+                }
+
+                <p><strong>Overview:</strong> @movie.Overview</p>
+
+
+                     
+            </div>
+        </div>
+
+        @if (movie.Backdrops != null && movie.Backdrops.Any())
+{
+    <div class="backdrop-gallery">
+        @foreach (var backdrop in movie.Backdrops.Skip(backdropStartIndex).Take(BackdropPageSize))
+        {
+            <img src="@backdrop.FullPosterUrl" class="backdrop-image" style="width:19%; margin:5px; border-radius: 5px;" />
+        }
+        <div>
+    <button @onclick="ShowPreviousBackdrops" disabled="@(backdropStartIndex == 0)">
+        &#8592; <!-- Left arrow -->
+    </button>
+    <button @onclick="ShowNextBackdrops" disabled="@(backdropStartIndex + BackdropPageSize >= movie.Backdrops.Count)">
+        &#8594; <!-- Right arrow -->
+    </button>
+
+    
+</div>
+
+    </div>
+    <div class="info-row">
+    <div class="cast-list">
+        <p><strong>Cast:</strong></p>
+       
+    </div>
+    <div class="production-companies">
+    <div class="production-title-container">
+        <p class="production-title"><strong>Production Companies:</strong></p>
+        <div class="production-underline"></div>
+    </div>
+    @foreach (var company in movie.ProductionCompanies)
+    {
+        <div class="company-entry">
+            <span class="company-name">@company.Name</span>
+            <img height="50" width="100" src="@company.FullLogoUrl" alt="@company.Name" />
+        </div>
+    }
+</div>
+</div>
+
+
+}
+
+
+        @* @foreach (var video in movie.Videos.Where(v => v.Type != null && v.Type.ToLower() == "trailer"))
 {
     <div class="video">
         <h4>@video.Name</h4>
         <iframe width="560" height="315" src="https://www.youtube.com/embed/@video.Key" frameborder="0"
             allowfullscreen></iframe>
     </div>
-}
-        @foreach (var video in movie.Videos.Where(v => v.Name != null && v.Name.ToLower().Contains("song clip")))
-        {
-            <div class="video">
-                <h4>@video.Name</h4>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/@video.Key" frameborder="0"
-                    allowfullscreen></iframe>
-            </div>
-        }
-        @foreach (var video in movie.Videos.Where(v => v.Name != null && v.Name.ToLower().Contains("clip")))
-        {
-            <div class="video">
-                <h4>@video.Name</h4>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/@video.Key" frameborder="0"
-                    allowfullscreen></iframe>
-            </div>
-        }
+} *@
 
 
-        @if (movie.Genres != null && movie.Genres.Any())
-        {
-            <p><strong>Genres:</strong> @string.Join(", ", movie.Genres.Select(g => g.Name))</p>
-        }
-        @if (movie.ProductionCompanies != null && movie.ProductionCompanies.Any())
-        {
-            foreach (var company in movie.ProductionCompanies)
-            {
-                <img src="@company.FullLogoUrl" alt="@company.Name" />
-            }
-            <p><strong>Production Companies:</strong> @string.Join(", ", movie.ProductionCompanies.Select(p => p.Name))</p>
-        }
-        @if (movie.Backdrops != null && movie.Backdrops.Any())
-        {
 
-            <div class="backdrops">
-                @foreach (var backdrop in movie.Backdrops)
-                {
-                    <img src="@backdrop.FullPosterUrl" alt="Backdrop" class="backdrop-image" />
-                }
-            </div>
-        }
+
+      
+        
 
     </div>
 }
@@ -77,6 +114,11 @@ else
     public int MovieId { get; set; }
 
     private Movie? movie;
+
+    private int backdropStartIndex = 0;
+    private const int BackdropPageSize = 5;
+
+
 
     protected override async Task OnInitializedAsync()
     {
@@ -91,4 +133,118 @@ else
         }
 
     }
+
+        void ShowNextBackdrops()
+    {
+        if (movie?.Backdrops != null)
+        {
+            backdropStartIndex = Math.Min(backdropStartIndex + BackdropPageSize, Math.Max(0, movie.Backdrops.Count - BackdropPageSize));
+        }
+    }
+
+    void ShowPreviousBackdrops()
+    {
+        backdropStartIndex = Math.Max(backdropStartIndex - BackdropPageSize, 0);
+    }
 }
+
+<style>
+    .movie-title {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+    }
+
+    .movie-poster {
+        width: 300px;
+        height: 455px;
+        border-top-left-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+
+    .video {}
+
+    .backdrop-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .movie-poster-container {
+        display: flex;
+        flex-direction: row;
+        height: 455px;
+        
+    }
+
+    .movie-details {
+        padding: 1em;
+        background: rgb(133, 199, 209);
+        border-top-right-radius: 8px;
+        border-bottom-right-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .backdrop-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .backdrop-image {
+        max-width: 100%;
+        height: auto;
+    }
+    .production-companies {
+    min-width: 220px;
+    margin-left: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: silver;
+    padding: 16px;
+}
+    .company-name {
+        font-weight: bold;
+        margin: 0.5em 0;
+        margin-right: 12px;
+    }
+    .company{
+        display: flex;
+        align-items: center;
+        margin-bottom: 1em;
+        
+    }
+   .info-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 24px;
+}
+.company-entry {
+    margin-bottom: 16px;
+}
+.Companies-Header {
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.production-title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.production-underline {
+    width: 60%;
+    max-width: 180px;
+    height: 2px;
+    background: #333;
+    margin: 4px auto 12px auto;
+    border-radius: 1px;
+}
+
+</style>

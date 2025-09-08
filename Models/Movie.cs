@@ -2,6 +2,7 @@
 
 namespace Models
 {
+    using System.Collections;
     using System.Text.Json.Serialization;
 
     public class Movie
@@ -46,6 +47,7 @@ namespace Models
 
         [JsonPropertyName("videos")]
         public List<Videos> Videos { get; set; } = new List<Videos>();
+
 
         public string FullPosterUrl =>
             !string.IsNullOrWhiteSpace(PosterPath)
