@@ -1,35 +1,63 @@
-# .NET
-bin/
-obj/
-*.user
-*.suo
-*.userosscache
-*.sln.docstates
+# .NET Backend
+backend/**/bin/
+backend/**/obj/
+backend/**/*.user
+backend/**/*.suo
+backend/**/*.userosscache
+backend/**/*.sln.docstates
+backend/**/appsettings.json
+backend/**/appsettings.*.json
+backend/**/secrets.json
 
-# VS Code / Rider
+# Flutter Frontend
+frontend/**/build/
+frontend/**/.dart_tool/
+frontend/**/.packages
+frontend/**/.pub-cache/
+frontend/**/.pub/
+frontend/**/pubspec.lock
+frontend/**/.flutter-plugins
+frontend/**/.flutter-plugins-dependencies
+
+# Flutter/Dart specific
+frontend/**/*.g.dart
+frontend/**/*.freezed.dart
+frontend/**/*.mocks.dart
+frontend/**/coverage/
+frontend/**/test/.test_coverage.dart
+
+# IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
+
+# Visual Studio
+.vs/
+**/.vs/
 
 # Build results
-build/
-out/
-
-# App settings
-appsettings.json
-appsettings.*.json
-
-# Sensitive files
-secrets.json
+**/build/
+**/out/
 
 # Logs
 *.log
 
 # Environment files
 .env
+.env.local
+.env.*.local
 
-# OS generated
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
-/MovieDatabase/.vs/MovieDatabase/FileContentIndex
-/MovieDatabase/.vs/MovieDatabase/FileContentIndex
-MovieDatabase/.vs/MovieDatabase/FileContentIndex/0bae93e9-8600-46c5-9125-53c7a4faaabd.vsidx
+
+# API Keys (security)
+**/api_keys.dart
+**/secrets.dart
