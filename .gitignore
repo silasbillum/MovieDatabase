@@ -28,6 +28,18 @@ frontend/**/.flutter-plugins
 frontend/**/.flutter-plugins-dependencies
 frontend/**/.metadata
 
+# Flutter - IDE and tooling
+frontend/**/.idea/
+frontend/**/*.iml
+frontend/**/.vscode/
+
+# Flutter - Additional cache and generated files
+frontend/**/.dart_tool/
+frontend/**/android/.gradle/
+frontend/**/android/app/debug/
+frontend/**/android/app/profile/
+frontend/**/android/app/release/
+
 # Flutter - Generated files
 frontend/**/android/app/src/main/java/**/R.java
 frontend/**/android/gradle.properties
