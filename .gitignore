@@ -9,17 +9,56 @@ backend/**/appsettings.json
 backend/**/appsettings.*.json
 backend/**/secrets.json
 
-# Flutter Frontend
+# Flutter Frontend - Build outputs
 frontend/**/build/
 frontend/**/.dart_tool/
+frontend/**/android/app/build/
+frontend/**/ios/build/
+frontend/**/windows/build/
+frontend/**/linux/build/
+frontend/**/macos/build/
+frontend/**/web/build/
+
+# Flutter - Dependencies and packages
 frontend/**/.packages
 frontend/**/.pub-cache/
 frontend/**/.pub/
 frontend/**/pubspec.lock
 frontend/**/.flutter-plugins
 frontend/**/.flutter-plugins-dependencies
+frontend/**/.metadata
 
-# Flutter/Dart specific
+# Flutter - Generated files
+frontend/**/android/app/src/main/java/**/R.java
+frontend/**/android/gradle.properties
+frontend/**/android/local.properties
+frontend/**/android/gradlew
+frontend/**/android/gradlew.bat
+frontend/**/android/.gradle/
+frontend/**/android/captures/
+frontend/**/android/app/debug/
+frontend/**/android/app/profile/
+frontend/**/android/app/release/
+
+# Flutter - iOS specific
+frontend/**/ios/Pods/
+frontend/**/ios/Runner.xcworkspace/xcuserdata/
+frontend/**/ios/Runner.xcodeproj/xcuserdata/
+frontend/**/ios/Runner.xcodeproj/project.xcworkspace/xcuserdata/
+frontend/**/ios/.symlinks/
+frontend/**/ios/Flutter/flutter_assets/
+frontend/**/ios/ServiceDefinitions.json
+
+# Flutter - Windows specific  
+frontend/**/windows/flutter/ephemeral/
+
+# Flutter - macOS specific
+frontend/**/macos/Flutter/ephemeral/
+
+# Flutter - Linux specific
+frontend/**/linux/flutter/ephemeral/
+
+# Flutter/Dart code generation
 frontend/**/*.g.dart
 frontend/**/*.freezed.dart
 frontend/**/*.mocks.dart
