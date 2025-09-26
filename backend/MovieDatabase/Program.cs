@@ -48,4 +48,11 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+// Ensure the API is available at the expected URL structure
+app.Map("/api", apiApp =>
+{
+    apiApp.UseRouting();
+    apiApp.MapControllers();
+});
+
 app.Run();
