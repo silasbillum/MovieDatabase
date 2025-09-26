@@ -1,0 +1,155 @@
+﻿@page "/Tv"
+@using Models
+@using MovieDatabase.Services
+@inject IMovieService MovieService
+@inject NavigationManager navigationManager
+
+<PageTitle>Home</PageTitle>
+
+
+@if (isLoading)
+{
+    <p>Loading...</p>
+}
+else
+{
+    <div class="movie-list">
+        @foreach (var tv in trendingResult)
+        {
+            <div class="MovieList" @onclick="() => OpenDetails(tv.Id)">
+
+
+           <div>
+                <img src="@tv.FullPosterUrl" alt="@tv.MovieTitle" class="movie" />
+           </div>
+                <div class="movie-details">
+                    <p class="movieInfo">@tv.MovieTitle <span style="visibility: hidden;">-------------------------------------------------------------------</span></p>
+                    <p class="movieInfo-date text-gray-700">Date aired: @tv.ReleaseDate</p>
+                    @* <p class="text-sm text-gray-700">Language: @movie.Language</p>
+                    <p class="text-sm text-gray-700">Rating: @movie.Rating</p> *@
+                    @* <p class="text-sm">@movie.Overview</p>
+                    <p>PosterPath: @movie.PosterPath</p>  *@
+                    @* <p>FullPosterUrl: @movie.FullPosterUrl</p> *@
+                </div>
+
+
+            </div>
+        }
+    </div>
+}
+
+<div class="pagination-controls">
+    <button @onclick="PrevPage" disabled="@(!CanGoPrev)">Prev</button>
+    <span>Page @currentPage</span>
+    <button @onclick="NextPage">Next</button>
+</div>
+
+
+
+@code {
+    [SupplyParameterFromQuery(Name = "page")]
+    public int PageFromQuery { get; set; } = 1;
+    private List<TVShows> trendingResult = new();
+    private bool isLoading = false;
+    private int currentPage = 1;
+    private bool CanGoPrev => currentPage > 1;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadTVAsync(currentPage);
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        await LoadTVAsync(PageFromQuery);
+    }
+    private async Task LoadTVAsync(int page)
+    {
+        isLoading = true;
+        try
+        {
+            trendingResult = await MovieService.TrendingTVAsync(page);
+            currentPage = page;
+        }
+        catch (Exception ex)
+        {
+            Console.Error.WriteLine($"API Error: {ex.Message}");
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+    public void OpenDetails(int tvId)
+    {
+        navigationManager.NavigateTo($"/tv/{tvId}");
+    }
+    private void GoToPage(int page)
+    {
+        navigationManager.NavigateTo($"tv?page={page}", forceLoad: false);
+    }
+
+    private void NextPage() => GoToPage(currentPage + 1);
+    private void PrevPage()
+    {
+        if (currentPage > 1)
+            GoToPage(currentPage - 1);
+    }
+}
+
+<style>
+    .MovieList {
+        width: 220px;
+        min-height: 250px;
+        border-radius: 20px;
+        border-width: 1px;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .movie {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+        width: 220px;
+        height: 300px;
+    }
+
+    .movieInfo {
+        padding-left: 20px;
+        min-height: 30px;
+        margin: 0;
+        font-weight: bold;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
+    .movieInfo-date {
+        padding-left: 20px;
+        min-height: 50px;
+        max-height: 50px;
+        margin: 0;
+        color: dimgray;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
+    .movie-details {
+        border: hidden;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        max-height: 80px;
+        width: 220px;
+        border-width: 1px;
+    }
+
+    .movie-list {
+        margin: 20px;
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(5, 1fr);
+        flex-direction: column;
+    }
+</style>
