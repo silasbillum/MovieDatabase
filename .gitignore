@@ -1,63 +1,35 @@
-# .NET Backend
-backend/**/bin/
-backend/**/obj/
-backend/**/*.user
-backend/**/*.suo
-backend/**/*.userosscache
-backend/**/*.sln.docstates
-backend/**/appsettings.json
-backend/**/appsettings.*.json
-backend/**/secrets.json
+# .NET
+bin/
+obj/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
 
-# Flutter Frontend
-frontend/**/build/
-frontend/**/.dart_tool/
-frontend/**/.packages
-frontend/**/.pub-cache/
-frontend/**/.pub/
-frontend/**/pubspec.lock
-frontend/**/.flutter-plugins
-frontend/**/.flutter-plugins-dependencies
-
-# Flutter/Dart specific
-frontend/**/*.g.dart
-frontend/**/*.freezed.dart
-frontend/**/*.mocks.dart
-frontend/**/coverage/
-frontend/**/test/.test_coverage.dart
-
-# IDE
+# VS Code / Rider
 .vscode/
 .idea/
-*.swp
-*.swo
-*~
-
-# Visual Studio
-.vs/
-**/.vs/
 
 # Build results
-**/build/
-**/out/
+build/
+out/
+
+# App settings
+appsettings.json
+appsettings.*.json
+
+# Sensitive files
+secrets.json
 
 # Logs
 *.log
 
 # Environment files
 .env
-.env.local
-.env.*.local
 
-# OS generated files
+# OS generated
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
 Thumbs.db
-
-# API Keys (security)
-**/api_keys.dart
-**/secrets.dart
+/MovieDatabase/.vs/MovieDatabase/FileContentIndex
+/MovieDatabase/.vs/MovieDatabase/FileContentIndex
+MovieDatabase/.vs/MovieDatabase/FileContentIndex/0bae93e9-8600-46c5-9125-53c7a4faaabd.vsidx
